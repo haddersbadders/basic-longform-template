@@ -1,7 +1,7 @@
 
 #A Simple Long-form Framework
 
-[A demo of this framework can be found here.](http://haddersbadders.github.io/Simple-longform-framework/)
+[A demo of this framework can be found here.](https://haddersbadders.github.io/basic-longform-template/)
 
 [Here's the CSS almanac if you need it](https://css-tricks.com/almanac/properties/)
 
@@ -18,84 +18,121 @@ There are four types of ```<section>```that are differentiated using three diffe
 - Full width and height section with background video that uses the class name **video_container**
 - Full width and height section with background colour that uses the class name **color_container**
 
-###Examples
+This document contains all the snippets you need with explanations.
 
-When you want a full width/height image header section, use:
+###Big heading sections with full width/height background images
 
-```<section class="img_container">
-  //Content here
-  </section>```
+The image_bg class sets up the dimensions of the element.
 
-When you want some content, add:
+```
+<section class="image_bg">
 
-```<section class="content"> //Some content </section> ```
+</section>
+```
 
-##The content sections
-The content section is used to put text and inline images in. Content in this section has a width of 60% and is centred. This is controlled by the **.content** selector in CSS.
+Add an additional class name, in this case "dogs" so that you can define a background image in CSS:
 
-You can add additional classes to your content sections for further styling. For example changing the background colour:
+```
+<section class="dogs image_bg">
 
-```<section class="content mountains">```
-with the CSS of
-``` .mountains {background: #CCD9E1; }```
+</section>
+```
+To accompany this, add a new CSS style in style.css:
 
-In the above example, the section has two classes: content and mountains. The section takes instructions from **both** classes in the CSS.
-##The header sections
+```
+.dogs {
+  background: url(../img/dog_pic.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+```
 
-The header sections are there to give nice big headers for content with full width image backgrounds. The ```.img_container``` class in CSS has only two properties:
+You can then put content inside this section, for example a header with headings:
+```
+<section class="dogs image_bg">
+  <header>
+    <h1>Some content</h1>
+  </header>
+</section>
+```
 
-1. ```height: 100vh``` which sets the height of the section to whatever the height of the viewport is
-2. ```position: relative``` enables absolute positioning of elements inside the section
+But it doesn't need to be headings, it could be blockquote, or anything. This may require additional CSS.
 
-Because each header section is different - they will have a different background image - an additional class is given to each header section allowing a background image to be specified:
+###Content sections
 
-```<section class="rocks img_container">``` with CSS of ```.rocks { background: url(path/to/image.jpg); }```
+A content section gives you a column to put your text and any other media.
+
+```
+<section class="content">
+  //Your content
+</section>
+```
+
+This is straight forward.
+
+###Big heading sections with full width/height and background colour
+
+As well as headers with background images, you can have just a colour.
+
+```
+<section class="color_bg">
+
+</section>
+```
+The "color_bg" class sets up the section's dimensions. The addition of your own class e.g. "bg_green" allows you to set it's colour:
+```
+<section class="color_bg bg_green">
+
+</section>
+```
+And in CSS, create a new style:
+```
+.bg_green {
+  background: #bada55;
+}
+```
+Add the header and h1 as with the image_bg.
 
 
-##Sections, DIVs or headers?
 
-I've used ```<section>``` elements, but because the styles are controlled by classes it doesn't really matter what elements are used. It could be ```<header class="rocks img_container">``` or ```<div class="rocks img_container">```.
+###Image carousel
+[Owl Carousel](http://smashingboxes.github.io/OwlCarousel2/) has been integrated. Simply create some HTML like:
 
-##Effects
+```
+<div class="owl-carousel">
+  <div> <img src="img/Slider/IMG_2712.JPG" alt="" /> </div>
+  <div> <img src="img/Slider/IMG_2927.JPG" alt="" /> </div>
+  <div> <img src="img/Slider/IMG_2959.JPG" alt="" /> </div>
+</div>
 
-Also included are [Animate.css](https://daneden.github.io/animate.css/) and [Wow.js](http://mynameismatthieu.com/WOW/).
+```
+Noting the class name given e.g. "owl-carousel". Then initialise the carousel in index.js.
+```
 
-Animate.css provides animation for elements and Wow.js allows control over these animations so they occur when scrolled to.
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items: 1,
+    nav: true
+  });
 
-##Image slider
+  $(".alps-carousel").owlCarousel({
+    items: 1,
+    dots: false,
+    autoplay: true,
+    animateOut: 'fadeOut'
+  }); //
 
-Included is the [Owl Carousel image slider](http://www.owlcarousel.owlgraphic.com/). This will go in a content section or (TODO) full width.
+});
+```
 
-##YouTube
+The above initialises two separate carousels, one with a class "owl-carousel" and the other "alps-carousel".
 
-YouTube is invoked using the [Youtube API](https://developers.google.com/youtube/) rather than just the iFrame embed. This is beacuase the YouTube video is paused until the user scrolls to it then pauses again once the user scrolls past. This is controlled in the js/index.js file using [ScrollMagic](http://scrollmagic.io/examples/index.html).
+###Wow animations
+[Animate.css](http://daneden.github.io/animate.css/) and [Wow.js](http://mynameismatthieu.com/WOW/) are integrated.
 
+To initialise an animation when scrolled to, add the class "wow" and any of the classes listed on animate.css website to the element:
+```
+<header class="wow fadeInUpBig">
 
-##Audio
-
-Similar to firing off a Youtube vide when scrolled to, we can use ScrollMagic to play/pause an audio file:
-
-[Scroll to "some pretty things in the desert" for as demo](http://haddersbadders.github.io/fancy-longform/) 
-
-[The code is here](https://github.com/haddersbadders/fancy-longform/tree/Master)
-
-In the "flowers" section header, audio is embeded using the ```<audio>``` element. Playback is controlled in js/index.js using ScollMagic. When the user scrolls to the trigger div, ScrollMagic plays the audio file and pauses when scrolled away.
-
-##Background videos
-There are a few methods for having background videos. Probably the easiest one, if you don't need to control playback with scrolling (e.g. your fist header), is to use the [Vide jQuery plugin](https://github.com/VodkaBears/Vide). This is easy to use: 
-
-1. Download the Zip file from the link above. Extract andf copy the file src/jquery.vide.js to your project's js folder.
-2. Near the bottom of your index.html file, add the line ```<script src="js/jquery.vide.js"></script>```  below where jquery.min.js is linked
-3. Make sure you video is in mp4 format and in the img folder e.g. img/trailer.mp4
-4. In the section you want the background video, add the data attribute data-vide-bg e.g. ```data-vide-bg="img/trailer"``` will load the video img/trailer.mp4 as background
-5. Add any additional options e.g.```data-vide-options="loop: true, muted: true, position: 0% 0%"``` 
-
-More info is at the [Vide jQuery plugin](https://github.com/VodkaBears/Vide) page
-
-##Virtual Reality
-The example 360_example.html shows how to use [the A-Frame WebVR framework](https://aframe.io/). It's quite simple to get going, and you can [see it part way down here in the mountains image](http://haddersbadders.github.io/Simple-longform-framework/360_example.html).
-
-All we do is create an additional HTML file (see pano.html), include the A-frame JavaScript file and some specific HTML. This applies the 360 image or video onto the web page. The web page is then inserted in to your main page using an iframe tag. 
-
-The pano.html file needs to be running on a web sever to work. 
-
+</header>
+```

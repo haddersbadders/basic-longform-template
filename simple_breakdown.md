@@ -4,10 +4,10 @@ This document contains all the snippets you need with explanations.
 
 ###Big heading sections with full width/height background images
 
-The img_container class sets up the dimensions of the element.
+The image_bg class sets up the dimensions of the element.
 
 ```
-<section class="img_container">
+<section class="image_bg">
 
 </section>
 ```
@@ -15,7 +15,7 @@ The img_container class sets up the dimensions of the element.
 Add an additional class name, in this case "dogs" so that you can define a background image in CSS:
 
 ```
-<section class="dogs img_container">
+<section class="dogs image_bg">
 
 </section>
 ```
@@ -31,7 +31,7 @@ To accompany this, add a new CSS style in style.css:
 
 You can then put content inside this section, for example a header with headings:
 ```
-<section class="dogs img_container">
+<section class="dogs image_bg">
   <header>
     <h1>Some content</h1>
   </header>
@@ -57,13 +57,13 @@ This is straight forward.
 As well as headers with background images, you can have just a colour.
 
 ```
-<section class="color_conatiner">
+<section class="color_bg">
 
 </section>
 ```
-The "color_conatiner" class sets up the section's dimensions. The addition of your own class e.g. "bg_green" allows you to set it's colour:
+The "color_bg" class sets up the section's dimensions. The addition of your own class e.g. "bg_green" allows you to set it's colour:
 ```
-<section class="color_conatiner bg_green">
+<section class="color_bg bg_green">
 
 </section>
 ```
@@ -73,88 +73,8 @@ And in CSS, create a new style:
   background: #bada55;
 }
 ```
-Add the header and h1 as with the img_container.
+Add the header and h1 as with the image_bg.
 
-###Full width videos
-
-There are two ways of implementing full width video: 
-
-####HTML5 video
-This can be seen in the HTML5Video_test.html file.
-
-This method requires you to place an mp4 video file in your web directory (the img folder is a good place).
-
-First create a section and give it a class name "video_container" - this sets up the dimentions of the section:
-```
-<section class="video_container" id="_htmlVid">
-
-</section>
-```
-The id="_htmlVid" allows us to trigger play from scrolling later on. 
-
-A ```<video>``` element is used and the mp4 video linked:
-```
-<section class="video_container">
-  <video src="img/trailer.mp4"></video>
-</section>
-```
-The ```<video>``` element can have several attributes to change it's characteristivs e.g.
-* **loop**  loops the video
-* **controls** turns on the control interface e.g. play/stop/seek
-* **id** gives the video element a unique name so it can be controlled in JavaScript
-
-So for a simple video that the user controls, just use:
-```
-<video src="img/trailer.mp4" controls></video>
-```
-```
-<video src="img/trailer.mp4" loop id="foo"></video>
-```
-
-The code to control the video csan be found in index.js: 
-```
-$(function () {
-  // build scene
-  var scene = new ScrollMagic.Scene({triggerElement: "#_htmlVid", duration: 500})
-  // var htmlVideo = document.getElementById("foo")[0];
-
-  .on("enter", function () {
-    document.getElementById('foo').play();
-  })
-  .on("leave", function () {
-    document.getElementById('foo').pause();
-
-  })
-  .addTo(controller);
-});
-```
-
-
-####Youtube Video at full width/height
-The section uses the class "video_container" which sets the dimensions.
-```
-<section class="video_container">
-
-</section>
-```
-Youtube is initialised using Javascript, so an additional div is required.
-
-```
-<section class="video_container">
-  <div id="player"></div>
-</section>
-```
-
-Lastly, the video playback is controlled by Javascript so an ID is required.
-```
-<section class="video_container" id="_video">
-  <div id="player"></div>
-</section>
-```
-In index.js, the Youtube video ID is required e.g. youtu.be/_tRKl0tSOKs0_
-```
-videoId: 'tRKl0tSOKs0'
-```
 
 
 ###Image carousel

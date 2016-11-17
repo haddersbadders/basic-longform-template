@@ -11,12 +11,11 @@ This template is in the style of a long-form page. The long-form style strips ou
 
 The structure is really quite simple: Content is broken down into **sections** using the HTML tag ```<section>```.
 
-There are four types of ```<section>```that are differentiated using three different class names:
+There are three types of ```<section>```that are differentiated using three different class names:
 
 - A content section using the class name **content**
-- Full width and height section with background image that uses the class name **img_container**
-- Full width and height section with background video that uses the class name **video_container**
-- Full width and height section with background colour that uses the class name **color_container**
+- Full width and height section with background image that uses the class name **image_bgr**
+- Full width and height section with background colour that uses the class name **color_bg**
 
 This document contains all the snippets you need with explanations.
 

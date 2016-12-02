@@ -1,5 +1,5 @@
 
-#A Simple Long-form Framework
+# A Basic Long-form Framework
 
 [A demo of this framework can be found here.](https://haddersbadders.github.io/basic-longform-template/)
 
@@ -7,7 +7,7 @@
 
 This template is in the style of a long-form page. The long-form style strips out web page furniture such as header, nav, sidebar etc and puts the focus on content. The style features full width images, large type and headers.
 
-##Structure
+## Structure
 
 The structure is really quite simple: Content is broken down into **sections** using the HTML tag ```<section>```.
 
@@ -19,7 +19,7 @@ There are three types of ```<section>```that are differentiated using three diff
 
 This document contains all the snippets you need with explanations.
 
-###Big heading sections with full width/height background images
+### Big heading sections with full width/height background images
 
 The image_bg class sets up the dimensions of the element.
 

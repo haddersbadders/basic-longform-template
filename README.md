@@ -95,36 +95,48 @@ Add the header and h1 as with the image_bg.
 
 
 ###Image carousel
-[Owl Carousel](http://smashingboxes.github.io/OwlCarousel2/) has been integrated. Simply create some HTML like:
+[Slick Carousel](http://kenwheeler.github.io/slick/) has been integrated. Simply create some HTML like:
 
 ```
-<div class="owl-carousel">
+<div class="carousel">
   <div> <img src="img/Slider/IMG_2712.JPG" alt="" /> </div>
   <div> <img src="img/Slider/IMG_2927.JPG" alt="" /> </div>
   <div> <img src="img/Slider/IMG_2959.JPG" alt="" /> </div>
 </div>
 
 ```
-Noting the class name given e.g. "owl-carousel". Then initialise the carousel in index.js.
-```
+Noting the class name given e.g. "carousel". Then initialise the carousel in index.js.
 
+```
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    items: 1,
-    nav: true
+  $('.carousel').slick({
+    dots: true
   });
-
-  $(".alps-carousel").owlCarousel({
-    items: 1,
-    dots: false,
-    autoplay: true,
-    animateOut: 'fadeOut'
-  }); //
-
 });
+
 ```
 
-The above initialises two separate carousels, one with a class "owl-carousel" and the other "alps-carousel".
+The above initialises a carousel. If you want another one, just make a new div with a different class name e.g. 
+
+```
+<div class="carousel_two">
+  <div>... etc
+```
+Then initialise that one too:
+
+```
+$(document).ready(function(){
+  $('.carousel').slick({
+    dots: true
+  });
+  
+  $('.carousel_two').slick({
+    dots: true
+  });
+});
+
+```
+
 
 ###Wow animations
 [Animate.css](http://daneden.github.io/animate.css/) and [Wow.js](http://mynameismatthieu.com/WOW/) are integrated.

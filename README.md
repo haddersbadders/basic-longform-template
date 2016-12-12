@@ -14,7 +14,7 @@ The structure is really quite simple: Content is broken down into **sections** u
 There are three types of ```<section>```that are differentiated using three different class names:
 
 - A content section using the class name **content**
-- Full width and height section with background image that uses the class name **image_bgr**
+- Full width and height section with background image that uses the class name **image_bg**
 - Full width and height section with background colour that uses the class name **color_bg**
 
 This document contains all the snippets you need with explanations.

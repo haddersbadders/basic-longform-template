@@ -47,7 +47,7 @@ blockquote {
 .image_bg, .color_bg {
   height: 100vh; /* this sets the height of each full width image section to that of the viewport.*/
   position: relative;
-  display: flex; /* this bit helps the headings go in the centre of the page */
+  /*display: flex;  */
   background-position: center !important;
 }
 

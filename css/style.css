@@ -59,7 +59,16 @@ header {
   text-shadow:0 0 9px #000000;
   width: 75%;
   text-align: center;
-  margin: auto;
+/*   margin: auto;
+   */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+-o-transform: translateX(-50%) translateY(-50%);
+-ms-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
 }
 header h1 {
   margin: 0;

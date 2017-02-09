@@ -139,7 +139,7 @@ Then initialise that one in index.js too:
 
 ```
 $(document).ready(function(){
-  $('.carousel_two').slick({
+  $('.carousel').slick({
     dots: true
   });
   

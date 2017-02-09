@@ -11,6 +11,16 @@ Features of the template include:
 - clear typography
 - scroll animations
 
+## The files
+
+The files you need to edit are:
+
+- **index.html** this is ht eweb page itself
+- css/**style.css** which is where the CSS styles go
+- js/**index.js** is where the bits of JavaScript go
+- **img** is the folder where you put your images
+
+
 ## Structure
 
 The structure of the template is simple. Content is separated into **sections** using the HTML tag ```<section>```.
@@ -64,7 +74,7 @@ But it doesn't need to be headings, it could be blockquote, or anything. This ma
 
 ###Content sections
 
-A content section gives you a column to put your text and any other media.
+A content section gives you a column for you to put text and any other media in. 
 
 ```
 <section class="content">
@@ -72,7 +82,7 @@ A content section gives you a column to put your text and any other media.
 </section>
 ```
 
-This is straight forward.
+This is straight forward - just give a section the class name **content**.
 
 ###Big heading sections with full width/height and background colour
 
@@ -83,7 +93,7 @@ As well as headers with background images, you can have just a colour.
 
 </section>
 ```
-The "color_bg" class sets up the section's dimensions. The addition of your own class e.g. "bg_green" allows you to set it's colour:
+The **color_bg** class sets up the section's dimensions. The addition of your own class e.g. "bg_green" allows you to set it's colour:
 ```
 <section class="color_bg bg_green">
 
@@ -95,11 +105,9 @@ And in CSS, create a new style:
   background: #bada55;
 }
 ```
-Add the header and h1 as with the image_bg.
 
 
-
-###Image carousel
+### Image carousel
 [Slick Carousel](http://kenwheeler.github.io/slick/) has been integrated. Simply create some HTML like:
 
 ```
@@ -110,7 +118,7 @@ Add the header and h1 as with the image_bg.
 </div>
 
 ```
-Noting the class name given e.g. "carousel". Then initialise the carousel in index.js.
+Noting the class name given e.g. **carousel**. Then initialise the carousel in index.js.
 
 ```
 $(document).ready(function(){
@@ -127,11 +135,11 @@ The above initialises a carousel. If you want another one, just make a new div w
 <div class="carousel_two">
   <div>... etc
 ```
-Then initialise that one too:
+Then initialise that one in index.js too:
 
 ```
 $(document).ready(function(){
-  $('.carousel').slick({
+  $('.carousel_two').slick({
     dots: true
   });
   
@@ -143,8 +151,10 @@ $(document).ready(function(){
 ```
 
 
-###Wow animations
+### Wow animations
 [Animate.css](http://daneden.github.io/animate.css/) and [Wow.js](http://mynameismatthieu.com/WOW/) are integrated.
+
+This allows you to animate any element when it is scrolled to.
 
 To initialise an animation when scrolled to, add the class "wow" and any of the classes listed on animate.css website to the element:
 ```

@@ -1,23 +1,28 @@
 
-# A Basic Long-form Framework
+# A Basic Longform template
 
 [A demo of this framework can be found here.](https://haddersbadders.github.io/basic-longform-template/)
 
-[Here's the CSS almanac if you need it](https://css-tricks.com/almanac/properties/)
+This template is in the style of a longform page. The longform style strips out web page furniture such as masthead, navigation, sidebar etc to focus on the content. 
 
-This template is in the style of a long-form page. The long-form style strips out web page furniture such as header, nav, sidebar etc and puts the focus on content. The style features full width images, large type and headers.
+Features of the template include:
+
+- full width/height section headings with static background images
+- clear typography
+- scroll animations
 
 ## Structure
 
-The structure is really quite simple: Content is broken down into **sections** using the HTML tag ```<section>```.
+The structure of the template is simple. Content is separated into **sections** using the HTML tag ```<section>```.
 
-There are three types of ```<section>```that are differentiated using three different class names:
+There are three types of ```<section>```that are visually different. These are differentiated using the class names:
 
-- A content section using the class name **content**
-- Full width and height section with background image that uses the class name **image_bg**
-- Full width and height section with background colour that uses the class name **color_bg**
+- **content** ```<section class="content">``` gives you a column to add content like paragraphs images etc 
+- **image_bg** ```<section class="image_bg">``` gives a full width/height section with background image* 
+- **color_bg** ```<section class="color_bg">``` gives a full width/height section with a background colour* 
 
-This document contains all the snippets you need with explanations.
+*Use a separate class names to specify image path and colour code.
+
 
 ### Big heading sections with full width/height background images
 

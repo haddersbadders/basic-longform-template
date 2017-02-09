@@ -37,11 +37,11 @@ Adding the **image_bg** class to a section makes it go full width/height.
 To specify a background image, an additional class name is required. I want a picture of a dogs. so I'm going to add the class name "dogs":
 
 ```
-<section class="**dogs** image_bg">
+<section class="dogs image_bg">
 
 </section>
 ```
-To accompany this, add a new CSS style in style.css:
+This means I can add a new style in style.css that points to my image of dogs:
 
 ```
 .dogs {

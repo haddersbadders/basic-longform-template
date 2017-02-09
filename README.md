@@ -26,7 +26,7 @@ There are three types of ```<section>```that are visually different. These are d
 
 ### Big heading sections with full width/height background images
 
-The image_bg class sets up the dimensions of the element.
+Adding the **image_bg** class to a section makes it go full width/height.
 
 ```
 <section class="image_bg">
@@ -34,10 +34,10 @@ The image_bg class sets up the dimensions of the element.
 </section>
 ```
 
-Add an additional class name, in this case "dogs" so that you can define a background image in CSS:
+To specify a background image, an additional class name is required. I want a picture of a dogs. so I'm going to add the class name "dogs":
 
 ```
-<section class="dogs image_bg">
+<section class="**dogs** image_bg">
 
 </section>
 ```

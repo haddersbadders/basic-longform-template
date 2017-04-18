@@ -15,4 +15,8 @@ A variable _ukeVid_ is set up to allow easy access to the video element:
 ```
 var ukeVid = document.getElementById('uke');
 ```
+The scroll magic scene is set up and attributes given that define the _trigger_ element and the _duration_ i.e. how long you need to scroll past the video to trigger a pause:
+```
+var scene = new ScrollMagic.Scene({triggerElement: "#uke", duration: 200})
+```
 

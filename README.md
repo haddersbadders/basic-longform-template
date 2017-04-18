@@ -19,4 +19,21 @@ The scroll magic scene is set up and attributes given that define the _trigger_ 
 ```
 var scene = new ScrollMagic.Scene({triggerElement: "#uke", duration: 200})
 ```
+This means that scroll magic is triggered when you scroll to the element with the ID _uke_ then scrolling 200px further will trigger it's end.
 
+When the user scroll enters the trigger zone i.e. the areas between the _trigger_ and the end of _duration_, this function is fired off:
+```
+.on("enter", function () {
+          ukeVid.play();
+        })
+```
+When the user scrolls outside the trigger zone, this is fired off:
+```
+.on("leave", function () {
+          ukeVid.pause();
+        })
+```
+
+### What about audio?
+
+Just use ``<audio id="your_ID" src="whatever.mp3"></audio>`` it uses the same controls as video.

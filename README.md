@@ -8,3 +8,5 @@ See index.html line 48 for inclusion of the video element:
 ```
 <video id="uke" src="images/uke.mp4" controls></video>
 ```
+
+in ``js/index.js``, 
